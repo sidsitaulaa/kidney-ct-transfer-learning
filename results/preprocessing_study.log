@@ -1,0 +1,5 @@
+10:52:30 {'backbone': 'MobileNet', 'features': 'final', 'body_crop': False, 'dim': 1024, 'mean_val_macro_f1': 0.6151539664018038, 'test_accuracy': 0.6945203278161658, 'test_macro_f1': 0.6205709804025241}
+11:00:18 {'backbone': 'MobileNet', 'features': 'final', 'body_crop': True, 'dim': 1024, 'mean_val_macro_f1': 0.667452958066559, 'test_accuracy': 0.7061706572392736, 'test_macro_f1': 0.6416099669837932}
+11:06:59 {'backbone': 'MobileNet', 'features': 'multilevel', 'body_crop': False, 'dim': 1792, 'mean_val_macro_f1': 0.6646974222836668, 'test_accuracy': 0.7156516149766994, 'test_macro_f1': 0.6454448523912337}
+11:14:48 {'backbone': 'MobileNet', 'features': 'multilevel', 'body_crop': True, 'dim': 1792, 'mean_val_macro_f1': 0.7279620740543853, 'test_accuracy': 0.7414430339064759, 'test_macro_f1': 0.6856127683105251}
+11:14:48 Chosen on validation: {'backbone': 'MobileNet', 'features': 'multilevel', 'body_crop': True, 'dim': 1792, 'mean_val_macro_f1': 0.7279620740543853, 'test_accuracy': 0.7414430339064759, 'test_macro_f1': 0.6856127683105251}

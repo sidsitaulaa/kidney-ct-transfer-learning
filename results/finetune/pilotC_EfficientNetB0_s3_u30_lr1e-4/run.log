@@ -1,0 +1,4 @@
+22:41:47 fold 0: 2783 training and 490 validation images (1 in every 3 slices), 2793 test images
+22:45:14     head phase: val accuracy 0.4694
+22:51:10     fine-tune phase: 6 epochs, best val loss 0.8427, val accuracy 0.6898
+22:51:56 fold 0 done in 10.2 min: val macro-F1 0.5940

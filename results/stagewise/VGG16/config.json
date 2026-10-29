@@ -1,0 +1,16 @@
+{
+  "img_size": 224,
+  "crop": true,
+  "stride": 2,
+  "head_epochs": 2,
+  "epochs": 12,
+  "patience": 3,
+  "batch_size": 32,
+  "head_lr": 0.001,
+  "lr": 0.0001,
+  "dropout": 0.5,
+  "multilevel_head": true,
+  "model": "VGG16",
+  "cut_after": "block4_pool",
+  "weights": "imagenet"
+}

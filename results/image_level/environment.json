@@ -1,0 +1,10 @@
+{
+  "tensorflow": "2.15.0",
+  "keras_tuner": "1.4.7",
+  "numpy": "1.26.4",
+  "pandas": "2.2.3",
+  "python": "3.11.0rc1",
+  "cpu_count": 12,
+  "intra_threads": "3",
+  "batch_size": 16
+}

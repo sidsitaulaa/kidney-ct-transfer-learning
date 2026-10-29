@@ -1,0 +1,21 @@
+04:59:23 Indexed 12446 images in ['Cyst', 'Normal', 'Stone', 'Tumor']; 1034 byte-identical files; 204 scan groups
+04:59:33 Leakage check:
+      protocol  folds  train_per_fold  val_per_fold  test_per_fold  test_file_in_train_pct  test_byte_identical_in_train_pct  test_near_identical_in_train_pct  test_scan_in_train_pct
+group-level CV      5            8525          1431           2489                    0.00                              0.00                              0.00                    0.00
+image-level CV      5            8462          1494           2489                    0.00                              5.46                             97.21                   99.98
+04:59:33 VGG16: features (12446, 512) in 0s
+05:01:34   group-level CV       accuracy per fold: 0.7043 0.6123 0.6211 0.6278 0.7534
+05:09:53   image-level CV       accuracy per fold: 0.9996 1.0000 0.9984 1.0000 0.9996
+05:12:04 MobileNet: features (12446, 1024) in 0s
+05:14:40   group-level CV       accuracy per fold: 0.6853 0.6606 0.5840 0.5825 0.7336
+05:24:30   image-level CV       accuracy per fold: 1.0000 0.9996 0.9996 1.0000 0.9992
+05:27:32 ResNet50: features (12446, 2048) in 0s
+05:31:03   group-level CV       accuracy per fold: 0.6330 0.5949 0.5916 0.6388 0.6901
+05:43:11   image-level CV       accuracy per fold: 0.9992 0.9988 1.0000 1.0000 1.0000
+05:47:31 InceptionV3: features (12446, 2048) in 0s
+05:51:33   group-level CV       accuracy per fold: 0.5911 0.5823 0.5967 0.6484 0.7228
+06:05:15   image-level CV       accuracy per fold: 0.9968 0.9980 0.9984 0.9980 0.9996
+06:09:09 Xception: features (12446, 2048) in 0s
+06:12:27   group-level CV       accuracy per fold: 0.6026 0.4927 0.5552 0.6360 0.4882
+06:24:39   image-level CV       accuracy per fold: 0.9976 0.9992 0.9976 0.9972 0.9984
+06:28:01 Done in 88.7 min. Report: results/REPORT.md

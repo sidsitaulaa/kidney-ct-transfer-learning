@@ -1,0 +1,37 @@
+{
+  "data_dir": "data/ct-kidney",
+  "output_dir": "results",
+  "cache_dir": "cache",
+  "models": [
+    "VGG16",
+    "MobileNet",
+    "ResNet50",
+    "InceptionV3",
+    "Xception"
+  ],
+  "img_size": 224,
+  "weights": "imagenet",
+  "feature_batch_size": 32,
+  "scan_break_r": 0.9,
+  "duplicate_r": 0.995,
+  "n_folds": 5,
+  "val_frac": 0.15,
+  "seed": 42,
+  "grid_units": [
+    256,
+    512
+  ],
+  "grid_dropout": [
+    0.5
+  ],
+  "grid_lr": [
+    0.001,
+    0.0001
+  ],
+  "max_epochs": 100,
+  "patience": 8,
+  "batch_size": 256,
+  "class_weights": true,
+  "bootstrap_samples": 2000,
+  "threads": 6
+}

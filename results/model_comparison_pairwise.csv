@@ -1,0 +1,2 @@
+Model A,Model B,difference,ci_low,ci_high,p_value,p_holm
+MobileNet,ResNet50,-0.07609467011022031,-0.12876068166566676,-0.015379866590507586,0.02,0.02

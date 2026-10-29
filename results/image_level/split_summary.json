@@ -1,0 +1,38 @@
+{
+  "n_images": 12446,
+  "n_train": 8713,
+  "n_val": 1880,
+  "n_test": 1853,
+  "per_class": {
+    "Cyst": {
+      "train": 2599,
+      "val": 564,
+      "test": 546
+    },
+    "Normal": {
+      "train": 3552,
+      "val": 768,
+      "test": 757
+    },
+    "Stone": {
+      "train": 964,
+      "val": 206,
+      "test": 207
+    },
+    "Tumor": {
+      "train": 1598,
+      "val": 342,
+      "test": 343
+    }
+  },
+  "duplicate_groups": 517,
+  "files_in_duplicate_groups": 1034,
+  "test_byte_identical_in_train": 0,
+  "scan_groups": 204,
+  "test_from_scan_in_train": 1852,
+  "test_from_scan_in_train_pct": 99.94603345925526,
+  "val_from_scan_in_train_pct": 99.84042553191489,
+  "test_near_identical_in_train": 1805,
+  "test_near_identical_in_train_pct": 97.40960604425256,
+  "test_max_r_to_train_median": 0.999244213104248
+}

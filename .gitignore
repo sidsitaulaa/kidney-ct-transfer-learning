@@ -1,0 +1,36 @@
+# Data and caches (large; re-created by scripts/download_data.py and the experiment)
+data/
+cache/
+*.npy
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+.pydeps/
+
+# OS / editors
+.DS_Store
+*:Zone.Identifier
+.vscode/
+.idea/
+
+
+# Large or regenerable experiment outputs (see README "Reproduce")
+results/**/tuner/
+results/**/head.keras
+results/**/*.keras
+results/**/*.h5
+results/**/test_predictions.csv.gz
+results/**/status.json
+*.npz
+*.parquet
+*.zip
+*.tar.gz
+
+# Local tool state inside results

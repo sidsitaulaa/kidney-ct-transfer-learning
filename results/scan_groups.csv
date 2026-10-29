@@ -1,0 +1,5 @@
+class,images,scan_segments,groups,median_group_size,largest_group
+Cyst,3709,77,69,28.0,300
+Normal,5077,49,48,107.5,189
+Stone,1377,70,63,13.0,173
+Tumor,2283,28,24,84.5,222

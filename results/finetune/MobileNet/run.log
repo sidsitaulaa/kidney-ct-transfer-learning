@@ -1,0 +1,6 @@
+06:28:33 fold 0: results with identical settings already exist, skipping (use --force to retrain)
+06:28:33 fold 1: results with identical settings already exist, skipping (use --force to retrain)
+06:28:33 fold 2: results with identical settings already exist, skipping (use --force to retrain)
+06:28:33 fold 3: results with identical settings already exist, skipping (use --force to retrain)
+06:28:33 fold 4: results with identical settings already exist, skipping (use --force to retrain)
+06:28:33 All 5 folds done; out-of-fold predictions written for stage-2 comparison

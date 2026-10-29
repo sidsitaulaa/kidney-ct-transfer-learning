@@ -1,0 +1,189 @@
+2026-10-29 03:26:06 run_image_level start: models=['VGG16', 'MobileNet', 'ResNet50', 'InceptionV3', 'Xception'] batch=32 threads=4
+2026-10-29 03:26:06 split: wrote results/image_level/split.csv
+2026-10-29 03:26:09 split: train 8713, val 1880, test 1853; 517 duplicate groups (1034 files) kept together; test from a scan seen in training: 99.9%; near-identical (r>=0.995) to a training image: 97.4%
+2026-10-29 03:26:09 labels: class map {'Cyst': 0, 'Normal': 1, 'Stone': 2, 'Tumor': 3} fixed; every label matches its folder; per-class train/val/test fractions within 1 point of 70/15/15
+2026-10-29 03:26:12 input checks: auditing every file (format, mode, bit depth, size, decode errors)
+2026-10-29 03:27:00 input checks: TF decoded 12446/12446 images to 150x150x3 float32, range [0, 255]
+2026-10-29 03:27:00 input checks: VGG16       caffe: RGB->BGR, subtract ImageNet mean per channel: min -123.68 max 151.06 mean -79.97 std 60.59 (expected within -123.68..151.06)
+2026-10-29 03:27:01 input checks: MobileNet   tf: x/127.5 - 1 -> [-1, 1]: min -1.00 max 1.00 mean -0.73 std 0.47 (expected within -1.00..1.00)
+2026-10-29 03:27:01 input checks: ResNet50    caffe: RGB->BGR, subtract ImageNet mean per channel: min -123.68 max 151.06 mean -79.97 std 60.59 (expected within -123.68..151.06)
+2026-10-29 03:27:03 input checks: InceptionV3 tf: x/127.5 - 1 -> [-1, 1]: min -1.00 max 1.00 mean -0.73 std 0.47 (expected within -1.00..1.00)
+2026-10-29 03:27:05 input checks: Xception    tf: x/127.5 - 1 -> [-1, 1]: min -1.00 max 1.00 mean -0.73 std 0.47 (expected within -1.00..1.00)
+2026-10-29 03:27:06 input checks: feature shapes at 150x150 with pooling='max': {'VGG16': [2, 512], 'MobileNet': [2, 1024], 'ResNet50': [2, 2048], 'InceptionV3': [2, 2048], 'Xception': [2, 2048]}
+2026-10-29 03:27:21 run_image_level start: models=['VGG16', 'MobileNet', 'ResNet50', 'InceptionV3', 'Xception'] batch=32 threads=4
+2026-10-29 03:27:21 split: reusing results/image_level/split.csv
+2026-10-29 03:27:23 split: train 8713, val 1880, test 1853; 517 duplicate groups (1034 files) kept together; test from a scan seen in training: 99.9%; near-identical (r>=0.995) to a training image: 97.4%
+2026-10-29 03:27:23 labels: class map {'Cyst': 0, 'Normal': 1, 'Stone': 2, 'Tumor': 3} fixed; every label matches its folder; per-class train/val/test fractions within 1 point of 70/15/15
+2026-10-29 03:27:28 VGG16: stage features
+2026-10-29 03:30:26 VGG16 features: 1024/12446 images (5.8 img/s)
+2026-10-29 03:33:23 VGG16 features: 2048/12446 images (5.8 img/s)
+2026-10-29 03:35:56 VGG16 features: 3072/12446 images (6.7 img/s)
+2026-10-29 03:38:28 VGG16 features: 4096/12446 images (6.7 img/s)
+2026-10-29 03:40:38 VGG16 features: 5120/12446 images (7.9 img/s)
+2026-10-29 03:42:37 VGG16 features: 6144/12446 images (8.6 img/s)
+2026-10-29 03:44:27 VGG16 features: 7168/12446 images (9.3 img/s)
+2026-10-29 03:46:22 VGG16 features: 8192/12446 images (8.9 img/s)
+2026-10-29 03:48:13 VGG16 features: 9216/12446 images (9.2 img/s)
+2026-10-29 03:51:06 VGG16 features: 10240/12446 images (5.9 img/s)
+2026-10-29 03:53:17 VGG16 features: 11264/12446 images (7.8 img/s)
+2026-10-29 03:55:36 VGG16 features: 12288/12446 images (7.4 img/s)
+2026-10-29 03:56:02 VGG16 features: 12446/12446 images (6.3 img/s)
+2026-10-29 03:56:02 VGG16: stage tuning (0/10 trials already done)
+2026-10-29 03:56:37 VGG16 tuner trial 00 COMPLETED: val_accuracy=0.9757 units=128 dropout=0.4 lr=0.0001
+2026-10-29 03:57:31 VGG16 tuner trial 01 COMPLETED: val_accuracy=0.9975 units=640 dropout=0.2 lr=0.0001
+2026-10-29 03:58:36 VGG16 tuner trial 02 COMPLETED: val_accuracy=0.9848 units=640 dropout=0.3 lr=0.01
+2026-10-29 03:59:22 VGG16 tuner trial 03 COMPLETED: val_accuracy=0.9926 units=512 dropout=0.3 lr=0.001
+2026-10-29 04:00:39 VGG16 tuner trial 04 COMPLETED: val_accuracy=0.9851 units=768 dropout=0.3 lr=0.01
+2026-10-29 04:01:32 VGG16 tuner trial 05 COMPLETED: val_accuracy=0.9947 units=256 dropout=0.2 lr=0.0001
+2026-10-29 04:02:35 VGG16 tuner trial 06 COMPLETED: val_accuracy=0.9989 units=640 dropout=0.3 lr=0.0001
+2026-10-29 04:03:24 VGG16 tuner trial 07 COMPLETED: val_accuracy=0.9872 units=512 dropout=0.4 lr=0.01
+2026-10-29 04:04:28 VGG16 tuner trial 08 COMPLETED: val_accuracy=0.9979 units=896 dropout=0.4 lr=0.0001
+2026-10-29 04:05:42 VGG16 tuner trial 09 COMPLETED: val_accuracy=0.9911 units=1024 dropout=0.2 lr=0.001
+2026-10-29 04:05:42 VGG16: stage final training with {'dense_units': 640, 'dropout_rate': 0.30000000000000004, 'learning_rate': 0.0001}
+2026-10-29 04:06:02 VGG16: done in 0:38:34: test accuracy 0.9984 [0.9962, 1.0000], macro-F1 0.9981
+2026-10-29 04:06:02 MobileNet: stage features
+2026-10-29 04:06:14 MobileNet features: 1024/12446 images (92.8 img/s)
+2026-10-29 04:06:28 MobileNet features: 2048/12446 images (74.5 img/s)
+2026-10-29 04:06:39 MobileNet features: 3072/12446 images (90.6 img/s)
+2026-10-29 04:06:49 MobileNet features: 4096/12446 images (100.8 img/s)
+2026-10-29 04:07:02 MobileNet features: 5120/12446 images (77.5 img/s)
+2026-10-29 04:07:13 MobileNet features: 6144/12446 images (101.1 img/s)
+2026-10-29 04:07:22 MobileNet features: 7168/12446 images (106.8 img/s)
+2026-10-29 04:07:37 MobileNet features: 8192/12446 images (70.4 img/s)
+2026-10-29 04:07:47 MobileNet features: 9216/12446 images (102.6 img/s)
+2026-10-29 04:07:57 MobileNet features: 10240/12446 images (100.9 img/s)
+2026-10-29 04:08:10 MobileNet features: 11264/12446 images (75.5 img/s)
+2026-10-29 04:08:22 MobileNet features: 12288/12446 images (89.8 img/s)
+2026-10-29 04:08:23 MobileNet features: 12446/12446 images (101.8 img/s)
+2026-10-29 04:08:24 MobileNet: stage tuning (0/10 trials already done)
+2026-10-29 04:09:17 MobileNet tuner trial 00 COMPLETED: val_accuracy=0.9871 units=128 dropout=0.4 lr=0.0001
+2026-10-29 04:10:42 MobileNet tuner trial 01 COMPLETED: val_accuracy=0.9945 units=640 dropout=0.2 lr=0.0001
+2026-10-29 04:12:43 MobileNet tuner trial 02 COMPLETED: val_accuracy=0.9821 units=640 dropout=0.3 lr=0.01
+2026-10-29 04:14:01 MobileNet tuner trial 03 COMPLETED: val_accuracy=0.9846 units=512 dropout=0.3 lr=0.001
+2026-10-29 04:15:40 MobileNet tuner trial 04 COMPLETED: val_accuracy=0.9810 units=768 dropout=0.3 lr=0.01
+2026-10-29 04:16:34 MobileNet tuner trial 05 COMPLETED: val_accuracy=0.9920 units=256 dropout=0.2 lr=0.0001
+2026-10-29 04:17:49 MobileNet tuner trial 06 COMPLETED: val_accuracy=0.9956 units=640 dropout=0.3 lr=0.0001
+2026-10-29 04:18:57 MobileNet tuner trial 07 COMPLETED: val_accuracy=0.9819 units=512 dropout=0.4 lr=0.01
+2026-10-29 04:20:28 MobileNet tuner trial 08 COMPLETED: val_accuracy=0.9954 units=896 dropout=0.4 lr=0.0001
+2026-10-29 04:22:17 MobileNet tuner trial 09 COMPLETED: val_accuracy=0.9812 units=1024 dropout=0.2 lr=0.001
+2026-10-29 04:22:17 MobileNet: stage final training with {'dense_units': 640, 'dropout_rate': 0.30000000000000004, 'learning_rate': 0.0001}
+2026-10-29 04:22:43 MobileNet: done in 0:16:40: test accuracy 0.9973 [0.9946, 0.9995], macro-F1 0.9958
+2026-10-29 04:22:43 ResNet50: stage features
+2026-10-29 10:08:01 host: stopping container after MobileNet to apply memory fixes (per-model subprocess, clear_session per trial, page-cache drop); container was at 2.42GiB/3GiB
+2026-10-29 04:23:24 run_image_level start: models=['VGG16', 'MobileNet', 'ResNet50', 'InceptionV3', 'Xception'] batch=32 threads=4
+2026-10-29 04:23:24 split: reusing results/image_level/split.csv
+2026-10-29 04:23:26 split: train 8713, val 1880, test 1853; 517 duplicate groups (1034 files) kept together; test from a scan seen in training: 99.9%; near-identical (r>=0.995) to a training image: 97.4%
+2026-10-29 04:23:27 labels: class map {'Cyst': 0, 'Normal': 1, 'Stone': 2, 'Tumor': 3} fixed; every label matches its folder; per-class train/val/test fractions within 1 point of 70/15/15
+2026-10-29 04:23:27 VGG16: already complete, skipping
+2026-10-29 04:23:27 MobileNet: already complete, skipping
+2026-10-29 04:23:28 run_image_level start: models=['ResNet50'] batch=32 threads=4
+2026-10-29 04:23:28 split: reusing results/image_level/split.csv
+2026-10-29 04:23:30 split: train 8713, val 1880, test 1853; 517 duplicate groups (1034 files) kept together; test from a scan seen in training: 99.9%; near-identical (r>=0.995) to a training image: 97.4%
+2026-10-29 04:23:30 labels: class map {'Cyst': 0, 'Normal': 1, 'Stone': 2, 'Tumor': 3} fixed; every label matches its folder; per-class train/val/test fractions within 1 point of 70/15/15
+2026-10-29 04:23:36 ResNet50: stage features
+2026-10-29 04:24:24 ResNet50 features: 1024/12446 images (21.7 img/s)
+2026-10-29 04:24:36 run_image_level start: models=['VGG16', 'MobileNet', 'ResNet50', 'InceptionV3', 'Xception'] batch=32 threads=4
+2026-10-29 04:24:36 split: reusing results/image_level/split.csv
+2026-10-29 04:24:44 split: train 8713, val 1880, test 1853; 517 duplicate groups (1034 files) kept together; test from a scan seen in training: 99.9%; near-identical (r>=0.995) to a training image: 97.4%
+2026-10-29 04:24:44 labels: class map {'Cyst': 0, 'Normal': 1, 'Stone': 2, 'Tumor': 3} fixed; every label matches its folder; per-class train/val/test fractions within 1 point of 70/15/15
+2026-10-29 04:25:25 ResNet50 features: 2048/12446 images (16.8 img/s)
+2026-10-29 04:26:13 ResNet50 features: 3072/12446 images (21.4 img/s)
+2026-10-29 04:27:04 ResNet50 features: 4096/12446 images (20.3 img/s)
+2026-10-29 04:27:48 ResNet50 features: 5120/12446 images (22.8 img/s)
+2026-10-29 04:28:39 ResNet50 features: 6144/12446 images (20.4 img/s)
+2026-10-29 04:29:23 ResNet50 features: 7168/12446 images (22.9 img/s)
+2026-10-29 04:30:08 ResNet50 features: 8192/12446 images (22.7 img/s)
+2026-10-29 04:30:58 ResNet50 features: 9216/12446 images (20.7 img/s)
+2026-10-29 04:31:43 ResNet50 features: 10240/12446 images (22.7 img/s)
+2026-10-29 04:32:32 ResNet50 features: 11264/12446 images (21.0 img/s)
+2026-10-29 04:33:17 ResNet50 features: 12288/12446 images (22.8 img/s)
+2026-10-29 04:33:23 ResNet50 features: 12446/12446 images (23.9 img/s)
+2026-10-29 04:33:24 ResNet50: stage tuning (0/10 trials already done)
+2026-10-29 04:34:14 ResNet50 tuner trial 00 COMPLETED: val_accuracy=0.9959 units=128 dropout=0.4 lr=0.0001
+2026-10-29 04:36:15 ResNet50 tuner trial 01 COMPLETED: val_accuracy=0.9982 units=640 dropout=0.2 lr=0.0001
+2026-10-29 04:39:49 ResNet50 tuner trial 02 COMPLETED: val_accuracy=0.9920 units=640 dropout=0.3 lr=0.01
+2026-10-29 04:41:29 ResNet50 tuner trial 03 COMPLETED: val_accuracy=0.9949 units=512 dropout=0.3 lr=0.001
+2026-10-29 04:44:07 ResNet50 tuner trial 04 COMPLETED: val_accuracy=0.9929 units=768 dropout=0.3 lr=0.01
+2026-10-29 04:45:18 ResNet50 tuner trial 05 COMPLETED: val_accuracy=0.9980 units=256 dropout=0.2 lr=0.0001
+2026-10-29 04:48:24 ResNet50 tuner trial 06 COMPLETED: val_accuracy=0.9982 units=640 dropout=0.3 lr=0.0001
+2026-10-29 04:51:00 ResNet50 tuner trial 07 COMPLETED: val_accuracy=0.9945 units=512 dropout=0.4 lr=0.01
+2026-10-29 04:55:24 ResNet50 tuner trial 08 COMPLETED: val_accuracy=0.9977 units=896 dropout=0.4 lr=0.0001
+2026-10-29 04:59:54 ResNet50 tuner trial 09 COMPLETED: val_accuracy=0.9963 units=1024 dropout=0.2 lr=0.001
+2026-10-29 04:59:55 ResNet50: stage final training with {'dense_units': 640, 'dropout_rate': 0.2, 'learning_rate': 0.0001}
+2026-10-29 05:00:56 ResNet50: done in 0:37:20: test accuracy 0.9989 [0.9973, 1.0000], macro-F1 0.9986
+2026-10-29 05:00:59 run_image_level start: models=['InceptionV3'] batch=32 threads=4
+2026-10-29 05:00:59 split: reusing results/image_level/split.csv
+2026-10-29 05:01:02 split: train 8713, val 1880, test 1853; 517 duplicate groups (1034 files) kept together; test from a scan seen in training: 99.9%; near-identical (r>=0.995) to a training image: 97.4%
+2026-10-29 05:01:02 labels: class map {'Cyst': 0, 'Normal': 1, 'Stone': 2, 'Tumor': 3} fixed; every label matches its folder; per-class train/val/test fractions within 1 point of 70/15/15
+2026-10-29 05:01:04 InceptionV3: stage features
+2026-10-29 05:01:45 InceptionV3 features: 1024/12446 images (28.0 img/s)
+2026-10-29 05:02:23 InceptionV3 features: 2048/12446 images (26.9 img/s)
+2026-10-29 05:03:03 InceptionV3 features: 3072/12446 images (25.4 img/s)
+2026-10-29 05:03:47 InceptionV3 features: 4096/12446 images (23.7 img/s)
+2026-10-29 05:04:27 InceptionV3 features: 5120/12446 images (25.5 img/s)
+2026-10-29 05:05:17 InceptionV3 features: 6144/12446 images (20.4 img/s)
+2026-10-29 05:05:54 InceptionV3 features: 7168/12446 images (27.3 img/s)
+2026-10-29 05:06:38 InceptionV3 features: 8192/12446 images (23.3 img/s)
+2026-10-29 05:07:31 InceptionV3 features: 9216/12446 images (19.6 img/s)
+2026-10-29 05:08:17 InceptionV3 features: 10240/12446 images (22.1 img/s)
+2026-10-29 05:17:09 run_image_level start: models=['VGG16', 'MobileNet', 'ResNet50', 'InceptionV3', 'Xception'] batch=16 threads=3
+2026-10-29 05:17:09 split: reusing results/image_level/split.csv
+2026-10-29 05:17:11 split: train 8713, val 1880, test 1853; 517 duplicate groups (1034 files) kept together; test from a scan seen in training: 99.9%; near-identical (r>=0.995) to a training image: 97.4%
+2026-10-29 05:17:12 labels: class map {'Cyst': 0, 'Normal': 1, 'Stone': 2, 'Tumor': 3} fixed; every label matches its folder; per-class train/val/test fractions within 1 point of 70/15/15
+2026-10-29 05:17:12 VGG16: already complete, skipping
+2026-10-29 05:17:12 MobileNet: already complete, skipping
+2026-10-29 05:17:12 ResNet50: already complete, skipping
+2026-10-29 05:17:12 run_image_level start: models=['InceptionV3'] batch=16 threads=3
+2026-10-29 05:17:12 split: reusing results/image_level/split.csv
+2026-10-29 05:17:15 split: train 8713, val 1880, test 1853; 517 duplicate groups (1034 files) kept together; test from a scan seen in training: 99.9%; near-identical (r>=0.995) to a training image: 97.4%
+2026-10-29 05:17:15 labels: class map {'Cyst': 0, 'Normal': 1, 'Stone': 2, 'Tumor': 3} fixed; every label matches its folder; per-class train/val/test fractions within 1 point of 70/15/15
+2026-10-29 05:17:21 InceptionV3: stage features
+2026-10-29 05:17:23 InceptionV3 features: resuming at image 10240/12446
+2026-10-29 05:18:44 InceptionV3 features: 11264/12446 images (12.8 img/s)
+2026-10-29 05:19:29 InceptionV3 features: 12288/12446 images (22.5 img/s)
+2026-10-29 05:19:35 InceptionV3 features: 12446/12446 images (27.3 img/s)
+2026-10-29 05:19:36 InceptionV3: stage tuning (0/10 trials already done)
+2026-10-29 05:20:35 InceptionV3 tuner trial 00 COMPLETED: val_accuracy=0.9830 units=128 dropout=0.4 lr=0.0001
+2026-10-29 05:22:29 InceptionV3 tuner trial 01 COMPLETED: val_accuracy=0.9895 units=640 dropout=0.2 lr=0.0001
+2026-10-29 05:24:22 InceptionV3 tuner trial 02 COMPLETED: val_accuracy=0.9734 units=640 dropout=0.3 lr=0.01
+2026-10-29 05:26:29 InceptionV3 tuner trial 03 COMPLETED: val_accuracy=0.9805 units=512 dropout=0.3 lr=0.001
+2026-10-29 05:29:26 InceptionV3 tuner trial 04 COMPLETED: val_accuracy=0.9777 units=768 dropout=0.3 lr=0.01
+2026-10-29 05:30:56 InceptionV3 tuner trial 05 COMPLETED: val_accuracy=0.9860 units=256 dropout=0.2 lr=0.0001
+2026-10-29 05:32:40 InceptionV3 tuner trial 06 COMPLETED: val_accuracy=0.9897 units=640 dropout=0.3 lr=0.0001
+2026-10-29 05:34:08 InceptionV3 tuner trial 07 COMPLETED: val_accuracy=0.9780 units=512 dropout=0.4 lr=0.01
+2026-10-29 05:36:29 InceptionV3 tuner trial 08 COMPLETED: val_accuracy=0.9871 units=896 dropout=0.4 lr=0.0001
+2026-10-29 05:38:54 InceptionV3 tuner trial 09 COMPLETED: val_accuracy=0.9798 units=1024 dropout=0.2 lr=0.001
+2026-10-29 05:38:54 InceptionV3: stage final training with {'dense_units': 640, 'dropout_rate': 0.30000000000000004, 'learning_rate': 0.0001}
+2026-10-29 05:39:28 InceptionV3: done in 0:22:06: test accuracy 0.9870 [0.9811, 0.9919], macro-F1 0.9827
+2026-10-29 05:39:34 run_image_level start: models=['Xception'] batch=16 threads=3
+2026-10-29 05:39:34 split: reusing results/image_level/split.csv
+2026-10-29 05:39:36 split: train 8713, val 1880, test 1853; 517 duplicate groups (1034 files) kept together; test from a scan seen in training: 99.9%; near-identical (r>=0.995) to a training image: 97.4%
+2026-10-29 05:39:36 labels: class map {'Cyst': 0, 'Normal': 1, 'Stone': 2, 'Tumor': 3} fixed; every label matches its folder; per-class train/val/test fractions within 1 point of 70/15/15
+2026-10-29 05:39:39 Xception: stage features
+2026-10-29 05:40:33 Xception features: 1024/12446 images (19.3 img/s)
+2026-10-29 05:41:30 Xception features: 2048/12446 images (18.0 img/s)
+2026-10-29 05:42:24 Xception features: 3072/12446 images (18.8 img/s)
+2026-10-29 05:43:15 Xception features: 4096/12446 images (20.0 img/s)
+2026-10-29 05:44:04 Xception features: 5120/12446 images (21.0 img/s)
+2026-10-29 05:45:05 Xception features: 6144/12446 images (17.0 img/s)
+2026-10-29 05:46:04 Xception features: 7168/12446 images (17.2 img/s)
+2026-10-29 05:46:58 Xception features: 8192/12446 images (19.0 img/s)
+2026-10-29 05:47:49 Xception features: 9216/12446 images (20.3 img/s)
+2026-10-29 05:48:43 Xception features: 10240/12446 images (18.9 img/s)
+2026-10-29 05:49:38 Xception features: 11264/12446 images (18.7 img/s)
+2026-10-29 05:50:31 Xception features: 12288/12446 images (19.3 img/s)
+2026-10-29 05:50:41 Xception features: 12446/12446 images (15.4 img/s)
+2026-10-29 05:50:42 Xception: stage tuning (0/10 trials already done)
+2026-10-29 05:51:37 Xception tuner trial 00 COMPLETED: val_accuracy=0.9871 units=128 dropout=0.4 lr=0.0001
+2026-10-29 05:53:17 Xception tuner trial 01 COMPLETED: val_accuracy=0.9954 units=640 dropout=0.2 lr=0.0001
+2026-10-29 05:55:10 Xception tuner trial 02 COMPLETED: val_accuracy=0.9789 units=640 dropout=0.3 lr=0.01
+2026-10-29 05:56:42 Xception tuner trial 03 COMPLETED: val_accuracy=0.9805 units=512 dropout=0.3 lr=0.001
+2026-10-29 05:58:47 Xception tuner trial 04 COMPLETED: val_accuracy=0.9745 units=768 dropout=0.3 lr=0.01
+2026-10-29 05:59:52 Xception tuner trial 05 COMPLETED: val_accuracy=0.9943 units=256 dropout=0.2 lr=0.0001
+2026-10-29 06:02:03 Xception tuner trial 06 COMPLETED: val_accuracy=0.9934 units=640 dropout=0.3 lr=0.0001
+2026-10-29 06:03:52 Xception tuner trial 07 COMPLETED: val_accuracy=0.9789 units=512 dropout=0.4 lr=0.01
+2026-10-29 06:06:27 Xception tuner trial 08 COMPLETED: val_accuracy=0.9950 units=896 dropout=0.4 lr=0.0001
+2026-10-29 06:08:56 Xception tuner trial 09 COMPLETED: val_accuracy=0.9782 units=1024 dropout=0.2 lr=0.001
+2026-10-29 06:08:56 Xception: stage final training with {'dense_units': 640, 'dropout_rate': 0.2, 'learning_rate': 0.0001}
+2026-10-29 06:09:35 Xception: done in 0:29:55: test accuracy 0.9930 [0.9887, 0.9968], macro-F1 0.9909
+2026-10-29 06:09:36 run_image_level finished (this session 0:52:27)

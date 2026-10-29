@@ -1,0 +1,160 @@
+{
+  "audit": {
+    "formats": {
+      "JPEG": 12446
+    },
+    "modes": {
+      "RGB": 12446
+    },
+    "bit_depth_per_channel": {
+      "8": 12446
+    },
+    "decode_failures": [],
+    "distinct_sizes": 77,
+    "most_common_sizes": [
+      [
+        "512x512",
+        7709
+      ],
+      [
+        "798x646",
+        240
+      ],
+      [
+        "804x651",
+        179
+      ],
+      [
+        "768x622",
+        177
+      ],
+      [
+        "840x680",
+        171
+      ],
+      [
+        "764x619",
+        160
+      ],
+      [
+        "1236x1001",
+        155
+      ],
+      [
+        "787x636",
+        141
+      ]
+    ],
+    "width_range": [
+      512,
+      1371
+    ],
+    "height_range": [
+      451,
+      1110
+    ],
+    "aspect_ratio_w_over_h": {
+      "min": 1.0,
+      "median": 1.0,
+      "max": 1.2394678492239468,
+      "share_outside_0.8_to_1.25": 0.0
+    },
+    "sampled_rgb_with_identical_channels": "249 of 249"
+  },
+  "tf_decode": {
+    "images": 12446,
+    "pixel_min": 0.0,
+    "pixel_max": 255.0
+  },
+  "preprocessing_sample_batch": [
+    {
+      "model": "VGG16",
+      "mode": "caffe: RGB->BGR, subtract ImageNet mean per channel",
+      "min": -123.68000030517578,
+      "max": 151.06100463867188,
+      "mean": -79.97139739990234,
+      "std": 60.58631896972656,
+      "expected_range": [
+        -123.68100000000001,
+        151.062
+      ]
+    },
+    {
+      "model": "MobileNet",
+      "mode": "tf: x/127.5 - 1 -> [-1, 1]",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": -0.7268396019935608,
+      "std": 0.47083595395088196,
+      "expected_range": [
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "model": "ResNet50",
+      "mode": "caffe: RGB->BGR, subtract ImageNet mean per channel",
+      "min": -123.68000030517578,
+      "max": 151.06100463867188,
+      "mean": -79.97139739990234,
+      "std": 60.58631896972656,
+      "expected_range": [
+        -123.68100000000001,
+        151.062
+      ]
+    },
+    {
+      "model": "InceptionV3",
+      "mode": "tf: x/127.5 - 1 -> [-1, 1]",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": -0.7268396019935608,
+      "std": 0.47083595395088196,
+      "expected_range": [
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "model": "Xception",
+      "mode": "tf: x/127.5 - 1 -> [-1, 1]",
+      "min": -1.0,
+      "max": 1.0,
+      "mean": -0.7268396019935608,
+      "std": 0.47083595395088196,
+      "expected_range": [
+        -1.0,
+        1.0
+      ]
+    }
+  ],
+  "feature_shapes": {
+    "VGG16": [
+      2,
+      512
+    ],
+    "MobileNet": [
+      2,
+      1024
+    ],
+    "ResNet50": [
+      2,
+      2048
+    ],
+    "InceptionV3": [
+      2,
+      2048
+    ],
+    "Xception": [
+      2,
+      2048
+    ]
+  },
+  "preprocessing": {
+    "VGG16": "caffe: RGB->BGR, subtract ImageNet mean per channel",
+    "MobileNet": "tf: x/127.5 - 1 -> [-1, 1]",
+    "ResNet50": "caffe: RGB->BGR, subtract ImageNet mean per channel",
+    "InceptionV3": "tf: x/127.5 - 1 -> [-1, 1]",
+    "Xception": "tf: x/127.5 - 1 -> [-1, 1]"
+  }
+}

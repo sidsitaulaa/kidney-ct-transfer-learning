@@ -1,0 +1,33 @@
+# CPU image for the image-level experiment (scripts/run_image_level.py).
+#
+# Build (the docker/ folder is the build context, so the dataset is never copied in):
+#   docker build -f docker/Dockerfile.image_level -t kidney-image-level:2.15 docker/
+# Run (repository mounted at /work; resumable, so the same command restarts it):
+#   docker run -d --name kidney-image-level --label atlas.guard=1 --memory=3g --memory-swap=3g --cpus=4 \
+#     -e TF_NUM_INTRAOP_THREADS=4 -e TF_NUM_INTEROP_THREADS=2 \
+#     -v "$PWD":/work -w /work kidney-image-level:2.15 python scripts/run_image_level.py
+FROM tensorflow/tensorflow:2.15.0
+
+# keras-tuner 1.4.7 is the last release tested against Keras 2.15; numpy stays at the TF-pinned 1.26.
+RUN pip install --no-cache-dir \
+        "keras-tuner==1.4.7" \
+        "scikit-learn==1.5.2" \
+        "pandas==2.2.3" \
+        "scipy==1.13.1" \
+        "matplotlib==3.9.2" \
+        "pillow==10.4.0" \
+        "pytest==8.3.3" \
+        "numpy==1.26.4"
+
+# Bake the five ImageNet weight files into the image (no downloads at run time) and make every
+# cache location writable for a non-root user.
+ENV KERAS_HOME=/opt/keras MPLCONFIGDIR=/tmp/mpl HOME=/tmp/home \
+    TF_CPP_MIN_LOG_LEVEL=2 PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
+RUN mkdir -p /opt/keras /tmp/mpl /tmp/home && python -c "\
+import tensorflow as tf; a = tf.keras.applications; \
+[f(include_top=False, weights='imagenet', input_shape=(150, 150, 3), pooling='max') \
+ for f in (a.VGG16, a.MobileNet, a.ResNet50, a.InceptionV3, a.Xception)]" \
+    && chmod -R a+rwX /opt/keras /tmp/mpl /tmp/home
+
+# Run as the host user (uid 1000) so files written to the mounted repository stay owned by them.
+USER 1000:1000

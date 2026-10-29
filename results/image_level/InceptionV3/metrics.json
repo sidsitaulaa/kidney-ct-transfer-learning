@@ -1,0 +1,79 @@
+{
+  "accuracy": 0.9870480302212629,
+  "balanced_accuracy": 0.9877983155078095,
+  "macro_precision": 0.9779793233079049,
+  "macro_recall": 0.9877983155078095,
+  "macro_f1": 0.9827178112553698,
+  "weighted_f1": 0.9871341905283277,
+  "cohen_kappa": 0.9815398869114677,
+  "mcc": 0.9816043254659698,
+  "roc_auc_macro_ovr": 0.9996686582063004,
+  "Cyst_precision": 0.996309963099631,
+  "Cyst_recall": 0.989010989010989,
+  "Cyst_f1": 0.9926470588235294,
+  "Cyst_specificity": 0.9984697781178271,
+  "Cyst_support": 546,
+  "Normal_precision": 0.9973154362416108,
+  "Normal_recall": 0.9815059445178336,
+  "Normal_f1": 0.9893475366178429,
+  "Normal_specificity": 0.9981751824817519,
+  "Normal_support": 757,
+  "Stone_precision": 0.9354838709677419,
+  "Stone_recall": 0.9806763285024155,
+  "Stone_f1": 0.9575471698113207,
+  "Stone_specificity": 0.991494532199271,
+  "Stone_support": 207,
+  "Tumor_precision": 0.9828080229226361,
+  "Tumor_recall": 1.0,
+  "Tumor_f1": 0.9913294797687862,
+  "Tumor_specificity": 0.9960264900662251,
+  "Tumor_support": 343,
+  "weighted_precision": 0.9874265182083565,
+  "weighted_recall": 0.9870480302212629,
+  "accuracy_ci_low": 0.9811117107393416,
+  "accuracy_ci_high": 0.9919050188882893,
+  "n_test": 1853,
+  "confusion_matrix": [
+    [
+      540,
+      1,
+      4,
+      1
+    ],
+    [
+      1,
+      743,
+      10,
+      3
+    ],
+    [
+      1,
+      1,
+      203,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      343
+    ]
+  ],
+  "model": "InceptionV3",
+  "best_hyperparameters": {
+    "dense_units": 640,
+    "dropout_rate": 0.30000000000000004,
+    "learning_rate": 0.0001
+  },
+  "best_trial": "06",
+  "tuner_best_val_accuracy": 0.9897163112958273,
+  "final_val_accuracy": 0.9877659574468085,
+  "final_train_accuracy_last_epoch": 0.9940319061279297,
+  "feature_dim": 2048,
+  "seconds": {
+    "features": 134.9,
+    "tuning": 1157.6,
+    "final_fit": 32.7,
+    "model_total": 1326.8
+  }
+}

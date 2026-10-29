@@ -1,0 +1,10 @@
+{
+  "model": "MobileNet",
+  "images": 64,
+  "max_abs_diff_probabilities_end_to_end_vs_cached": 0.0,
+  "max_abs_diff_features_recomputed_vs_cache": 0.0,
+  "max_abs_diff_backbone_training_true_vs_false": 0.0,
+  "argmax_agreement": 1.0,
+  "feature_scale_max": 6.0,
+  "passed": true
+}

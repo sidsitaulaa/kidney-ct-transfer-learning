@@ -1,0 +1,14 @@
+{
+  "backbone": "MobileNetV2",
+  "img_size": 192,
+  "stride": 2,
+  "unfreeze": 60,
+  "head_epochs": 4,
+  "finetune_epochs": 15,
+  "patience": 4,
+  "batch_size": 32,
+  "head_lr": 0.001,
+  "finetune_lr": 5e-05,
+  "dropout": 0.5,
+  "weights": "imagenet"
+}

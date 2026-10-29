@@ -1,0 +1,39 @@
+09:08:33 Loaded cached features for VGG16, MobileNet, ResNet50, InceptionV3, Xception
+09:09:08   fold 0 LogReg · VGG16               C=1 val macro-F1 0.6416
+09:09:43   fold 0 LogReg · MobileNet           C=1 val macro-F1 0.6992
+09:10:35   fold 0 LogReg · ResNet50            C=1 val macro-F1 0.6833
+09:11:23   fold 0 LogReg · InceptionV3         C=0.1 val macro-F1 0.5791
+09:12:09   fold 0 LogReg · Xception            C=1 val macro-F1 0.5833
+09:14:25   fold 0 LogReg · fusion of all backbones C=0.1 val macro-F1 0.7310
+09:14:25   fold 0 selected on validation: Ensemble · mean of backbone LogRegs
+09:14:55   fold 1 LogReg · VGG16               C=0.001 val macro-F1 0.6943
+09:15:36   fold 1 LogReg · MobileNet           C=1 val macro-F1 0.6177
+09:16:29   fold 1 LogReg · ResNet50            C=1 val macro-F1 0.6700
+09:17:26   fold 1 LogReg · InceptionV3         C=0.001 val macro-F1 0.6057
+09:18:57   fold 1 LogReg · Xception            C=1 val macro-F1 0.5504
+09:20:18   fold 1 LogReg · fusion of all backbones C=0.01 val macro-F1 0.6246
+09:20:18   fold 1 selected on validation: LogReg · VGG16
+09:20:46   fold 2 LogReg · VGG16               C=0.01 val macro-F1 0.4779
+09:21:20   fold 2 LogReg · MobileNet           C=0.01 val macro-F1 0.6266
+09:22:19   fold 2 LogReg · ResNet50            C=1 val macro-F1 0.6107
+09:23:15   fold 2 LogReg · InceptionV3         C=0.01 val macro-F1 0.5448
+09:24:05   fold 2 LogReg · Xception            C=1 val macro-F1 0.5555
+09:25:20   fold 2 LogReg · fusion of all backbones C=0.001 val macro-F1 0.6783
+09:25:20   fold 2 selected on validation: LogReg · fusion of all backbones
+09:25:49   fold 3 LogReg · VGG16               C=0.1 val macro-F1 0.4983
+09:26:19   fold 3 LogReg · MobileNet           C=1 val macro-F1 0.5000
+09:27:05   fold 3 LogReg · ResNet50            C=0.01 val macro-F1 0.4646
+09:28:12   fold 3 LogReg · InceptionV3         C=0.01 val macro-F1 0.4492
+09:29:06   fold 3 LogReg · Xception            C=0.01 val macro-F1 0.5344
+09:30:12   fold 3 LogReg · fusion of all backbones C=0.1 val macro-F1 0.5099
+09:30:12   fold 3 selected on validation: LogReg · Xception
+09:30:39   fold 4 LogReg · VGG16               C=0.001 val macro-F1 0.7421
+09:31:07   fold 4 LogReg · MobileNet           C=0.001 val macro-F1 0.6322
+09:31:53   fold 4 LogReg · ResNet50            C=0.001 val macro-F1 0.6679
+09:32:40   fold 4 LogReg · InceptionV3         C=0.001 val macro-F1 0.6532
+09:33:22   fold 4 LogReg · Xception            C=1 val macro-F1 0.5778
+09:34:23   fold 4 LogReg · fusion of all backbones C=1 val macro-F1 0.6916
+09:34:23   fold 4 selected on validation: LogReg · VGG16
+09:34:23 Included Fine-tuned MobileNet
+09:34:23 Included Fine-tuned MobileNet_224
+09:34:45 Done in 26.3 min. Report: results/IMPROVEMENTS.md
